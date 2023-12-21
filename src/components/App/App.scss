@@ -1,0 +1,93 @@
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.btn {
+  border-radius: 2px;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 70%;
+  height: 53px;
+  letter-spacing: 0.36px;
+  cursor: pointer;
+  padding: 20px 40px;
+  transition: all 0.3s ease;
+  transition-property: color, background-color;
+
+  .main & {
+    height: 63px;
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.btn_transparent {
+  border: 1px solid #284657;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 3px 6px 15px -1px rgba(0, 0, 0, 0.1);
+  color: #284657;
+}
+
+.btn_solid {
+  border: none;
+  background: #284657;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.input {
+  color: #3a3a3a;
+  border-radius: 4px;
+  border: 1px solid #e8e7e7;
+  height: 62px;
+  padding: 18px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: normal;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: #c0c0c0;
+  }
+
+  &-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  &__note {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: normal;
+    margin-top: 5px;
+  }
+}
+
+.invalid .invalid-field {
+  border: 1px solid #a51f1f;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.label {
+  color: #83c0cd;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 130%;
+  letter-spacing: 0.36px;
+  margin-bottom: 10px;
+}

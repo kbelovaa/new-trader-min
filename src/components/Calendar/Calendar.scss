@@ -1,0 +1,107 @@
+.calendar {
+  color: #284657;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__arrow {
+    cursor: pointer;
+
+    &_unactive {
+      opacity: 0.2;
+      cursor: default;
+    }
+  }
+
+  &__period {
+    margin: 0 10px;
+    font-size: 14px;
+    line-height: 100%;
+    min-width: 85px;
+    text-align: center;
+  }
+
+  &__days {
+    display: flex;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 30px) / 7);
+    margin-right: 5px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__day {
+    padding: 20px;
+    border-radius: 4px;
+    background: rgba(131, 192, 205, 0.15);
+    margin-bottom: 5px;
+    height: 89px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &_weekend {
+      color: #83c0cd;
+    }
+
+    &_selected {
+      background: rgba(131, 192, 205, 0.5);
+    }
+
+    &_unavailable {
+      cursor: default;
+    }
+  }
+
+  &__week-day {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 70%;
+  }
+
+  &__day-number {
+    font-size: 40px;
+    line-height: 70%;
+  }
+
+  &__time {
+    border-radius: 4px;
+    background: rgba(131, 192, 205, 0.15);
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 51px;
+    margin-bottom: 5px;
+    height: 51px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &_empty {
+      cursor: default;
+      background: #f5f5f5;
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: 700;
+      line-height: 51px;
+    }
+
+    &_selected {
+      background: rgba(131, 192, 205, 0.5);
+    }
+  }
+}

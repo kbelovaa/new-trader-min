@@ -1,0 +1,41 @@
+.header {
+  color: #717171;
+  text-transform: uppercase;
+  line-height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+
+  &-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(255 255 255 / 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    width: 100%;
+  }
+
+  &__label {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 262px;
+  }
+}
+
+.burger {
+  cursor: pointer;
+
+  &__bar {
+    width: 40px;
+    height: 2px;
+    border-radius: 47px;
+    background: #274455;
+    margin-top: 10px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}

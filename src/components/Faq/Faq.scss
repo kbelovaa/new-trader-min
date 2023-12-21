@@ -1,0 +1,17 @@
+.faq {
+  padding: 166px 100px 390px 100px;
+
+  &__title {
+    color: #274455;
+    margin-bottom: 73px;
+    text-transform: uppercase;
+  }
+
+  &__cards {
+    display: flex;
+  }
+
+  &__column:first-of-type {
+    margin-right: 10px;
+  }
+}

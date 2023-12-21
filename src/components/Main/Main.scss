@@ -1,0 +1,345 @@
+.title {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 70%;
+  letter-spacing: 1.2px;
+  margin-bottom: 42px;
+}
+
+.subtitle {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 70%;
+  letter-spacing: 0.8px;
+  margin-bottom: 42px;
+}
+
+.text {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: 0.44px;
+}
+
+.plus-line {
+  opacity: 1;
+  transition: opacity 0.4s;
+
+  &_hidden {
+    opacity: 0;
+  }
+}
+
+.main {
+  position: relative;
+
+  &__btn {
+    position: sticky;
+    left: calc(100% - 279px);
+    top: calc(100% - 263px);
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    width: 179px;
+    margin-bottom: 200px;
+  }
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 196px 100px 49px 100px;
+  margin-top: -263px;
+
+  &__title {
+    color: #274455;
+    font-size: 120px;
+    font-weight: 500;
+    line-height: 70%;
+    letter-spacing: -1.2px;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    color: #274455;
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 0.52px;
+    margin-bottom: 130px;
+  }
+
+  &__image {
+    width: 740px;
+  }
+}
+
+.why {
+  padding: 100px 100px 92px;
+
+  &-section {
+    background: #dbf9ff;
+  }
+
+  &__title {
+    color: #284657;
+  }
+
+  &__text {
+    color: #274455;
+  }
+}
+
+.opportunities {
+  padding: 82px 100px 92px;
+
+  &-section {
+    background: #284657;
+  }
+
+  &__title {
+    color: #8ce4f8;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 130%;
+    width: 940px;
+    margin-bottom: 82px;
+    letter-spacing: normal;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    color: #fff;
+    width: 347px;
+  }
+
+  &__subtitle {
+    margin-bottom: 22px;
+  }
+}
+
+.pricing {
+  padding: 100px 100px 92px;
+
+  &-section {
+    background: #d3d3d3;
+  }
+
+  &__title {
+    color: #284657;
+  }
+
+  &__text {
+    color: #274455;
+  }
+
+  &__payment {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: #274455;
+    }
+  }
+}
+
+.lessons {
+  padding: 100px 100px 92px;
+  position: relative;
+
+  &__title {
+    color: #8ce4f8;
+
+    & + .lessons__text {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    .expanded & {
+      max-height: 1000px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 71px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    color: #284657;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 70%;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+  }
+}
+
+.learning {
+  padding: 100px 100px 24px;
+  color: #284657;
+  position: relative;
+
+  &-section {
+    background: #dbf9ff;
+  }
+
+  &__text {
+    margin-bottom: 91px;
+  }
+
+  &__info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    .expanded & {
+      max-height: 1000px;
+    }
+  }
+}
+
+.journey {
+  padding: 100px 100px 24px;
+  position: relative;
+
+  &__title {
+    color: #8ce4f8;
+  }
+
+  &__text {
+    color: #284657;
+
+    .journey__title + & {
+      margin-bottom: 92px;
+    }
+  }
+
+  &__additional {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    .expanded & {
+      max-height: 10000px;
+    }
+  }
+
+  &__chart {
+    width: 100%;
+    margin-bottom: 130px;
+  }
+
+  &__stage {
+    margin-bottom: 72px;
+
+    &:last-of-type {
+      margin-bottom: 92px;
+    }
+
+    & .journey__subtitle {
+      color: #284657;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__list {
+    color: #284657;
+  }
+
+  &__component {
+    margin-bottom: 60px;
+
+    & .journey__subtitle {
+      margin-left: 50px;
+      color: #284657;
+      display: inline;
+      margin-bottom: 40px;
+    }
+
+    & .journey__text {
+      color: #0f0f0f;
+      margin-bottom: 29px;
+      line-height: 180%;
+    }
+  }
+
+  &__line {
+    display: flex;
+    width: 260px;
+    cursor: pointer;
+  }
+
+  &__additional-info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    .expanded-item & {
+      max-height: 2000px;
+    }
+  }
+}
+
+.success {
+  padding: 100px 100px 85px;
+  position: relative;
+
+  &-section {
+    background: #d8d8d8;
+  }
+
+  &__title {
+    color: #284657;
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin-bottom: 29px;
+    line-height: 180%;
+  }
+
+  &__info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    .expanded & {
+      max-height: 1500px;
+    }
+  }
+}
+
+.talk {
+  padding: 100px 100px 92px;
+
+  &-section {
+    background: #8ce4f8;
+  }
+
+  &__title {
+    color: #284657;
+  }
+
+  &__text {
+    color: #121212;
+  }
+}

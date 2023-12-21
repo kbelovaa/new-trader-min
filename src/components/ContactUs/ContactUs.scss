@@ -1,0 +1,22 @@
+.contact-us {
+  padding: 166px 100px 400px 100px;
+
+  &__title {
+    color: #274455;
+    margin-bottom: 73px;
+  }
+
+  &__form {
+    width: 670px;
+  }
+
+  &__message {
+    resize: none;
+    min-height: 124px;
+  }
+
+  &__btn {
+    margin-top: 30px;
+    width: 145px;
+  }
+}
