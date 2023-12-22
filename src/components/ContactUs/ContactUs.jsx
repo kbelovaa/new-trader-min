@@ -10,6 +10,7 @@ const ContactUs = () => {
   const [text, setText] = useState('');
   const [isFormValid, setIsFormValid] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(false);
 
   const handleEmailChange = (email) => {
     setEmail(email);
@@ -22,9 +23,14 @@ const ContactUs = () => {
     e.preventDefault();
 
     if (name && email && isEmailValid && text) {
-      const result = await contactUs(name, email, text);
-      if (result) {
-        setIsModalOpen(true);
+      try {
+        setShowSpinner(true);
+        const result = await contactUs(name, email, text);
+        if (result) {
+          setIsModalOpen(true);
+        }
+      } finally {
+        setShowSpinner(false);
       }
     } else {
       setIsFormValid(false);
@@ -83,9 +89,13 @@ const ContactUs = () => {
             <p className={!isFormValid && (!name || !email || !text) ? 'input__note' : 'hidden'}>
               Please fill in all fields
             </p>
-            <button type="submit" className="contact-us__btn btn btn_solid">
-              Submit
-            </button>
+            {showSpinner ? (
+              <div className="spinner spinner_small"></div>
+            ) : (
+              <button type="submit" className="contact-us__btn btn btn_solid">
+                Submit
+              </button>
+            )}
           </form>
         </div>
       </div>

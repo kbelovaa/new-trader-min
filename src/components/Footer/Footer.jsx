@@ -7,24 +7,16 @@ const Footer = () => (
       <p className="footer__text">Copyright © 2024 New trader. All rights reserved</p>
       <ul className="footer__links">
         <li>
-          <a href="#" className="footer__link">
-            Terms of Use
-          </a>
+          <span className="footer__link">Terms of Use</span>
         </li>
         <li>
-          <a href="#" className="footer__link">
-            Cookies
-          </a>
+          <span className="footer__link">Cookies</span>
         </li>
         <li>
-          <a href="#" className="footer__link">
-            Privacy Policy
-          </a>
+          <span className="footer__link">Privacy Policy</span>
         </li>
         <li>
-          <a href="#" className="footer__link">
-            Legal Notice
-          </a>
+          <span className="footer__link">Legal Notice</span>
         </li>
       </ul>
     </footer>

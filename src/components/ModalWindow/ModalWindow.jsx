@@ -13,7 +13,7 @@ const ModalWindow = ({ isOpen, setIsOpen, email, date, time, timeZone }) => {
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (modalRef.current && !modalRef.current.contains(e.target)) {
-        setIsOpen(false);
+        closeModal();
       }
     };
 
@@ -28,7 +28,7 @@ const ModalWindow = ({ isOpen, setIsOpen, email, date, time, timeZone }) => {
     };
   }, [isOpen]);
 
-  const handleButtonClick = () => {
+  const closeModal = () => {
     setIsOpen(false);
     navigate('/');
   };
@@ -47,7 +47,7 @@ const ModalWindow = ({ isOpen, setIsOpen, email, date, time, timeZone }) => {
               : `Thank you for scheduling the call. I'm looking forward to talk to you on ${date} at ${time} (${timeZone})`}
           </p>
           <span className={isContactUs ? 'confirmation__email' : 'hidden'}>{email}</span>
-          <button className="confirmation__btn btn btn_solid" onClick={handleButtonClick}>
+          <button className="confirmation__btn btn btn_solid" onClick={closeModal}>
             Ok
           </button>
         </div>

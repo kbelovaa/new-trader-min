@@ -18,12 +18,9 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [mobile, setMobile] = useState('');
   const [isMobileValid, setIsMobileValid] = useState(true);
-  const [displayedName, setDisplayedName] = useState('');
-  const [displayedSurname, setDisplayedSurname] = useState('');
-  const [displayedEmail, setDisplayedEmail] = useState('');
-  const [displayedMobile, setDisplayedMobile] = useState('');
   const [isFormValid, setIsFormValid] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(false);
 
   useEffect(() => {
     if (callTime.length !== 0) {
@@ -34,10 +31,6 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
       setSelectedTime(selectedDay.time[0]);
     }
   }, [callTime]);
-
-  const handleInputBlur = (setValue, value) => {
-    setValue(value);
-  };
 
   const handleEmailChange = (email) => {
     setEmail(email);
@@ -58,19 +51,24 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
       selectedTime &&
       selectedPlatform
     ) {
-      const row = getRow(rawSchedule, selectedDay, selectedTime) + 2;
-      const result = await bookCall(
-        row,
-        name,
-        surname,
-        email,
-        mobile,
-        selectedPlatform,
-        format(parse(selectedDay, 'dd.MM.yyyy', new Date()), 'EEE'),
-        ...convertTime(selectedTime, selectedDay, timeZone, 'Europe/Oslo'),
-      );
-      if (result) {
-        setIsModalOpen(true);
+      try {
+        setShowSpinner(true);
+        const row = getRow(rawSchedule, selectedDay, selectedTime) + 2;
+        const result = await bookCall(
+          row,
+          name,
+          surname,
+          email,
+          mobile,
+          selectedPlatform,
+          format(parse(selectedDay, 'dd.MM.yyyy', new Date()), 'EEE'),
+          ...convertTime(selectedTime, selectedDay, timeZone, 'Europe/Oslo'),
+        );
+        if (result) {
+          setIsModalOpen(true);
+        }
+      } finally {
+        setShowSpinner(false);
       }
     } else {
       setIsFormValid(false);
@@ -132,7 +130,6 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
                 className={`input ${!name ? 'invalid-field' : ''}`}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                onBlur={() => handleInputBlur(setDisplayedName, name)}
                 autoComplete="off"
               />
             </div>
@@ -146,7 +143,6 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
                 className={`input ${!surname ? 'invalid-field' : ''}`}
                 value={surname}
                 onChange={(e) => setSurame(e.target.value)}
-                onBlur={() => handleInputBlur(setDisplayedSurname, surname)}
                 autoComplete="off"
               />
             </div>
@@ -160,7 +156,6 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
                 className={`input ${!email || !isEmailValid ? 'invalid-field' : ''}`}
                 value={email}
                 onChange={(e) => handleEmailChange(e.target.value)}
-                onBlur={() => handleInputBlur(setDisplayedEmail, email)}
                 autoComplete="off"
               />
               <p className={isEmailValid ? 'hidden' : 'input__note'}>Please enter a valid email address.</p>
@@ -171,7 +166,6 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
               setMobile={setMobile}
               isMobileValid={isMobileValid}
               setIsMobileValid={setIsMobileValid}
-              setDisplayedMobile={setDisplayedMobile}
             />
             <p className={!isFormValid && (!name || !surname || !email || !mobile) ? 'input__note' : 'hidden'}>
               Please fill in all fields
@@ -186,15 +180,17 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
               )}, ${selectedTime} (${timeZone})`}
             </p>
             <p className="booking__summary-text">{selectedPlatform}</p>
-            <p
-              className={displayedName === '' && displayedSurname === '' ? 'hidden' : 'booking__summary-text'}
-            >{`${displayedName} ${displayedSurname}`}</p>
-            <p className={displayedEmail === '' ? 'hidden' : 'booking__summary-text'}>{displayedEmail}</p>
-            <p className={displayedMobile === '' ? 'hidden' : 'booking__summary-text'}>{displayedMobile}</p>
+            <p className={name === '' && surname === '' ? 'hidden' : 'booking__summary-text'}>{`${name} ${surname}`}</p>
+            <p className={email === '' ? 'hidden' : 'booking__summary-text'}>{email}</p>
+            <p className={mobile === '' ? 'hidden' : 'booking__summary-text'}>{mobile}</p>
           </div>
-          <button className="booking__btn btn btn_solid" onClick={handleFormSubmit}>
-            Book
-          </button>
+          {showSpinner ? (
+            <div className="spinner spinner_small"></div>
+          ) : (
+            <button className="booking__btn btn btn_solid" onClick={handleFormSubmit}>
+              Book
+            </button>
+          )}
         </div>
       </div>
       <ModalWindow

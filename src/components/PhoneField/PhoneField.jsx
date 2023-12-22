@@ -4,7 +4,7 @@ import { isValidNumber } from 'libphonenumber-js';
 import 'react-phone-input-2/lib/style.css';
 import './PhoneField.scss';
 
-const PhoneField = ({ ipCountry, mobile, setMobile, isMobileValid, setIsMobileValid, setDisplayedMobile }) => {
+const PhoneField = ({ ipCountry, mobile, setMobile, isMobileValid, setIsMobileValid }) => {
   const handleMobileChange = (value, country, e, formattedValue) => {
     setMobile(formattedValue);
     if (country.countryCode) {
@@ -21,7 +21,6 @@ const PhoneField = ({ ipCountry, mobile, setMobile, isMobileValid, setIsMobileVa
       <PhoneInput
         value={mobile}
         onChange={handleMobileChange}
-        onBlur={() => setDisplayedMobile(mobile)}
         country={ipCountry}
         enableSearch={true}
         inputClass={`${!ipCountry ? 'default' : ''} ${!mobile || !isMobileValid ? 'invalid-field' : ''}`}
