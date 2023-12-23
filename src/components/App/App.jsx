@@ -18,7 +18,6 @@ const App = () => {
   const [ipCountry, setIpCountry] = useState('');
 
   useEffect(() => {
-    console.log('hello ', process.env.REACT_APP_HI)
     const fetchSchedule = async () => {
       const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       setTimeZone(userTimeZone);
