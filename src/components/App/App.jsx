@@ -23,6 +23,7 @@ const App = () => {
       setTimeZone(userTimeZone);
 
       const schedule = await getSchedule();
+      console.log('hi', schedule)
       const localSchedule = schedule.map((time) => [
         time[0],
         ...convertTime(time[2], time[1], 'Europe/Oslo', userTimeZone),
