@@ -24,11 +24,8 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
 
   useEffect(() => {
     if (callTime.length !== 0) {
-      const selectedDay = callTime.filter(
-        (day) => parse(day.date, 'dd.MM.yyyy', new Date()) >= new Date().setHours(0, 0, 0, 0),
-      )[0];
-      setSelectedDay(selectedDay.date);
-      setSelectedTime(selectedDay.time[0]);
+      setSelectedDay(callTime[0].date);
+      setSelectedTime(callTime[0].time[0]);
     }
   }, [callTime]);
 

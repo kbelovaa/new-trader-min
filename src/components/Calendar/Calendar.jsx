@@ -4,7 +4,7 @@ import './Calendar.scss';
 
 const Calendar = ({ callTime, selectedDay, setSelectedDay, selectedTime, setSelectedTime }) => {
   const [days, setDays] = useState([]);
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(parse(callTime[0].date, 'dd.MM.yyyy', new Date()));
 
   useEffect(() => {
     const start = startOfWeek(currentDate, { weekStartsOn: 1 });
