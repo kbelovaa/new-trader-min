@@ -33,7 +33,7 @@ const Calendar = ({ callTime, selectedDay, setSelectedDay, selectedTime, setSele
     setCurrentDate(addDays(currentDate, 7));
   };
 
-  const findCallTime = (day) => callTime.find((callDay) => callDay.date === format(new Date(), 'dd.MM.yyyy'));
+  const findCallTime = (day) => callTime.find((callDay) => callDay.date === format(day, 'dd.MM.yyyy'));
 
   const handleDayClick = (day) => {
     if (day >= new Date().setHours(0, 0, 0, 0) && findCallTime(day)) {
