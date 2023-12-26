@@ -82,6 +82,17 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
             about backgrounds, motivations, and what to expect moving forward
           </p>
           <h3 className="booking__subtitle">1. Select date and time</h3>
+          {callTime.length === 0 ? (
+            <div className="spinner"></div>
+          ) : (
+            <Calendar
+              callTime={callTime}
+              selectedDay={selectedDay}
+              setSelectedDay={setSelectedDay}
+              selectedTime={selectedTime}
+              setSelectedTime={setSelectedTime}
+            />
+          )}
           <h3 className="booking__subtitle">2. Select platform</h3>
           <div className="booking__platforms">
             {platforms.map((platform, index) => (
@@ -159,6 +170,12 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
           </form>
           <h3 className="booking__subtitle">Summary</h3>
           <div className="booking__summary">
+          {console.log('selectedDay', selectedDay)}
+          {console.log('parsed', parse(selectedDay, 'dd.MM.yyyy', new Date()))}
+          {console.log('format', format(
+                parse(selectedDay, 'dd.MM.yyyy', new Date()),
+                'EEE',
+              ))}
             <p className="booking__summary-text">
               {`${selectedDay} ${format(
                 parse(selectedDay, 'dd.MM.yyyy', new Date()),
