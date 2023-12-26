@@ -36,8 +36,13 @@ export const getRow = (rawSchedule, targetDate, targetTime) => {
 export const convertTime = (time, day, sourceTimeZone, timeZone) => {
   const [startTime, endTime] = time.split('-');
 
+  console.log('time: ', time)
+
   const sourceStartDateTimeString = `${day} ${startTime}`;
   const sourceEndDateTimeString = `${day} ${endTime}`;
+
+  console.log('timezone from converttime: ', timeZone);
+  console.log('sourceStartDateTimeString: ', sourceStartDateTimeString);
 
   const sourceStartMoment = moment.tz(sourceStartDateTimeString, 'DD.MM.YYYY HH:mm', sourceTimeZone);
   const sourceEndMoment = moment.tz(sourceEndDateTimeString, 'DD.MM.YYYY HH:mm', sourceTimeZone);
@@ -53,6 +58,7 @@ export const convertTime = (time, day, sourceTimeZone, timeZone) => {
 
 export const getAvailableTime = (schedule) => {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  console.log('timezone: ', timeZone);
   const currentDateTime = new Date(new Date().toLocaleString('en-US', { timeZone: timeZone }));
   currentDateTime.setHours(0, 0, 0, 0);
   const futureDays = schedule.filter((day) => parse(day.date, 'dd.MM.yyyy', new Date()) >= currentDateTime);
@@ -62,6 +68,7 @@ export const getAvailableTime = (schedule) => {
     if (targetDate.getTime() === currentDateTime.getTime()) {
       const options = { timeZone: timeZone, hour12: false, hour: 'numeric' };
       let currentHour = Number(new Date().toLocaleString('en-US', options));
+      console.log('currentHour: ', currentHour)
       if (currentHour === 24) {
         currentHour = 0;
       }
