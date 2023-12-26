@@ -37,7 +37,8 @@ const Main = () => {
           <div className="slide">
             <h1 className="slide__title">New to trading?</h1>
             <p className="slide__text text">
-              Learn how to trade stocks with confidence through a structured process designed to deliver<br />
+              Learn how to trade stocks with confidence through a structured process designed to deliver
+              <br />
               results. The 4-week high-impact program is offered at $10,000 with limited availability.
             </p>
             <img src={devicesImg} alt="Devices" className="slide__image" />

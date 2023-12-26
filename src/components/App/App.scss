@@ -56,6 +56,12 @@
   line-height: normal;
   transition: all 0.3s ease;
 
+  &:active,
+  &:focus,
+  &:focus-visible {
+    border: 1px solid #83c0cd;
+  }
+
   &::placeholder {
     color: #c0c0c0;
   }

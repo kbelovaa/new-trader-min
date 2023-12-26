@@ -119,7 +119,9 @@ const Calendar = ({ callTime, selectedDay, setSelectedDay, selectedTime, setSele
                     key={index}
                     onClick={() => handleTimeClick(time, day)}
                     className={`calendar__time ${
-                      selectedTime === time && format(day, 'dd.MM.yyyy') === selectedDay ? 'calendar__time_selected' : ''
+                      selectedTime === time && format(day, 'dd.MM.yyyy') === selectedDay
+                        ? 'calendar__time_selected'
+                        : ''
                     }`}
                   >
                     {time}

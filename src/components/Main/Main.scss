@@ -36,7 +36,7 @@
 
   &__btn {
     position: sticky;
-    left: calc(100% - 279px - (100% - 1440px)/2);
+    left: calc(100% - 279px - (100% - 1440px) / 2);
     top: calc(100% - 163px);
     z-index: 2;
     backdrop-filter: blur(10px);
