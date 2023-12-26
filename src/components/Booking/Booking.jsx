@@ -9,7 +9,7 @@ import ModalWindow from '../ModalWindow/ModalWindow';
 import './Booking.scss';
 
 const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
-  const [selectedDay, setSelectedDay] = useState(new Date().toLocaleDateString());
+  const [selectedDay, setSelectedDay] = useState(format(new Date(), 'dd.MM.yyyy'));
   const [selectedTime, setSelectedTime] = useState('');
   const [selectedPlatform, setSelectedPlatform] = useState(platforms[0]);
   const [name, setName] = useState('');
