@@ -36,12 +36,12 @@
 
   &__btn {
     position: sticky;
-    left: calc(100% - 279px);
-    top: calc(100% - 263px);
+    left: calc(100% - 279px - (100% - 1440px)/2);
+    top: calc(100% - 163px);
     z-index: 2;
     backdrop-filter: blur(10px);
     width: 179px;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
   }
 }
 
@@ -51,7 +51,7 @@
   align-items: center;
   position: relative;
   padding: 17.1vh 100px 4.76vh 100px;
-  margin-top: -263px;
+  margin-top: -113px;
   height: 100vh;
 
   &__title {
@@ -330,7 +330,7 @@
 }
 
 .talk {
-  padding: 100px 100px 92px;
+  padding: 100px 100px 155px;
 
   &-section {
     background: #8ce4f8;
