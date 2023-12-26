@@ -33,11 +33,11 @@ const Calendar = ({ callTime, selectedDay, setSelectedDay, selectedTime, setSele
     setCurrentDate(addDays(currentDate, 7));
   };
 
-  const findCallTime = (day) => callTime.find((callDay) => callDay.date === day.toLocaleDateString());
+  const findCallTime = (day) => callTime.find((callDay) => callDay.date === format(new Date(), 'dd.MM.yyyy'));
 
   const handleDayClick = (day) => {
     if (day >= new Date().setHours(0, 0, 0, 0) && findCallTime(day)) {
-      setSelectedDay(day.toLocaleDateString());
+      setSelectedDay(format(day, 'dd.MM.yyyy'));
       setSelectedTime(findCallTime(day).time[0]);
       setCurrentDate(day);
     }
@@ -45,7 +45,7 @@ const Calendar = ({ callTime, selectedDay, setSelectedDay, selectedTime, setSele
 
   const handleTimeClick = (time, day) => {
     if (day >= new Date().setHours(0, 0, 0, 0)) {
-      setSelectedDay(day.toLocaleDateString());
+      setSelectedDay(format(day, 'dd.MM.yyyy'));
       setSelectedTime(time);
     }
   };
@@ -105,7 +105,7 @@ const Calendar = ({ callTime, selectedDay, setSelectedDay, selectedTime, setSele
           <div className="calendar__block" key={index}>
             <div
               className={`calendar__day ${index === 5 || index === 6 ? 'calendar__day_weekend' : ''} ${
-                selectedDay === day.toLocaleDateString() ? 'calendar__day_selected' : ''
+                selectedDay === format(day, 'dd.MM.yyyy') ? 'calendar__day_selected' : ''
               } ${findCallTime(day) ? '' : 'calendar__day_unavailable'}`}
               onClick={() => handleDayClick(day)}
             >
@@ -119,7 +119,7 @@ const Calendar = ({ callTime, selectedDay, setSelectedDay, selectedTime, setSele
                     key={index}
                     onClick={() => handleTimeClick(time, day)}
                     className={`calendar__time ${
-                      selectedTime === time && day.toLocaleDateString() === selectedDay ? 'calendar__time_selected' : ''
+                      selectedTime === time && format(day, 'dd.MM.yyyy') === selectedDay ? 'calendar__time_selected' : ''
                     }`}
                   >
                     {time}

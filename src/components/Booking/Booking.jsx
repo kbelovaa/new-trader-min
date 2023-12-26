@@ -170,12 +170,6 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
           </form>
           <h3 className="booking__subtitle">Summary</h3>
           <div className="booking__summary">
-          {console.log('selectedDay', selectedDay)}
-          {console.log('parsed', parse(selectedDay, 'dd.MM.yyyy', new Date()))}
-          {console.log('format', format(
-                parse(selectedDay, 'dd.MM.yyyy', new Date()),
-                'EEE',
-              ))}
             <p className="booking__summary-text">
               {`${selectedDay} ${format(
                 parse(selectedDay, 'dd.MM.yyyy', new Date()),
