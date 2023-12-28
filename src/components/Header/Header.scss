@@ -7,6 +7,14 @@
   align-items: center;
   padding: 40px 100px;
 
+  @media screen and (max-width: 1024px) {
+    padding: 40px 80px;
+  }
+
+  @media screen and (max-width: 744px) {
+    padding: 40px 16px;
+  }
+
   &-section {
     position: fixed;
     top: 0;
@@ -20,7 +28,10 @@
   &__label {
     font-size: 20px;
     color: #717171;
-    margin-right: 262px;
+
+    @media screen and (max-width: 744px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -33,6 +44,12 @@
     border-radius: 47px;
     background: #274455;
     margin-top: 10px;
+
+    @media screen and (max-width: 744px) {
+      width: 25px;
+      height: 1px;
+      margin-top: 6.15px;
+    }
 
     &:first-of-type {
       margin-top: 0;

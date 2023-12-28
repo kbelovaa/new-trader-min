@@ -12,6 +12,14 @@
   transition: all 0.3s;
   z-index: 3;
 
+  @media screen and (max-width: 1440px) {
+    padding: 80px 100px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 120px 100px;
+  }
+
   &.active {
     opacity: 1;
     pointer-events: all;
@@ -22,6 +30,14 @@
     top: 40px;
     right: 100px;
     cursor: pointer;
+
+    @media screen and (max-width: 1024px) {
+      right: 80px;
+    }
+
+    @media screen and (max-width: 744px) {
+      right: 16px;
+    }
   }
 
   &__list {
@@ -29,10 +45,14 @@
   }
 
   &__item {
-    margin-bottom: 24px;
+    margin-bottom: 25px;
 
     &:last-of-type {
       margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 744px) {
+      margin-bottom: 24px;
     }
   }
 
@@ -46,6 +66,10 @@
     &.active {
       color: #284657;
       font-weight: 400;
+    }
+
+    @media screen and (max-width: 744px) {
+      font-size: 14px;
     }
   }
 }

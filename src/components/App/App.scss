@@ -1,6 +1,18 @@
 .container {
   width: 1440px;
   margin: 0 auto;
+
+  @media screen and (max-width: 1440px) {
+    width: 1024px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 744px;
+  }
+
+  @media screen and (max-width: 744px) {
+    width: 100%;
+  }
 }
 
 .btn {
@@ -16,8 +28,26 @@
   transition: all 0.3s ease;
   transition-property: color, background-color;
 
+  @media screen and (max-width: 744px) {
+    font-size: 16px;
+    letter-spacing: 0.32px;
+    padding: 16px 32px;
+  }
+
   .main & {
     height: 63px;
+
+    @media screen and (max-width: 1440px) {
+      height: 53px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      height: 63px;
+    }
+
+    @media screen and (max-width: 744px) {
+      height: 53px;
+    }
   }
 
   &:active,
@@ -56,6 +86,11 @@
   line-height: normal;
   transition: all 0.3s ease;
 
+  @media screen and (max-width: 744px) {
+    height: 54px;
+    font-size: 18px;
+  }
+
   &:active,
   &:focus,
   &:focus-visible {
@@ -77,6 +112,10 @@
     font-weight: 300;
     line-height: normal;
     margin-top: 5px;
+
+    @media screen and (max-width: 744px) {
+      font-size: 12px;
+    }
   }
 }
 
@@ -96,6 +135,11 @@ input[type='radio'] {
   line-height: 130%;
   letter-spacing: 0.36px;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 744px) {
+    font-size: 14px;
+    letter-spacing: 0.28px;
+  }
 }
 
 .spinner {

@@ -6,6 +6,14 @@
   right: 100px;
   bottom: 50px;
 
+  @media screen and (max-width: 1024px) {
+    right: 80px;
+  }
+
+  @media screen and (max-width: 744px) {
+    right: 16px;
+  }
+
   &__text {
     color: #284657;
     font-size: 18px;
@@ -15,6 +23,11 @@
     text-transform: uppercase;
     margin-right: 10px;
     transition: all 0.3s;
+
+    @media screen and (max-width: 744px) {
+      font-size: 16px;
+      letter-spacing: 0.32px;
+    }
 
     .show-more-less:hover & {
       color: #487894;

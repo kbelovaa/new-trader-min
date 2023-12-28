@@ -37,10 +37,11 @@ const Main = () => {
           <div className="slide">
             <h1 className="slide__title">New to trading?</h1>
             <p className="slide__text text">
-              Learn how to trade stocks with confidence through a structured process designed to deliver
-              <br />
-              results. The 4-week high-impact program is offered at $10,000 with limited availability.
+              Learn how to trade stocks with confidence through a structured process designed to deliver results.<br className='slide__linebreak'/> The 4-week high-impact program is offered at $10,000 with limited availability.
             </p>
+            <button className="slide__btn btn btn_transparent" onClick={() => navigate('/booking')}>
+              Book a call
+            </button>
             <img src={devicesImg} alt="Devices" className="slide__image" />
           </div>
         </div>
@@ -74,7 +75,6 @@ const Main = () => {
                 <h3 className="opportunities__subtitle subtitle">Lifestyle</h3>
                 <p className="opportunities__text text">
                   Trading provides the flexibility to tailor a lifestyle according to your preferences. The ability
-                  <br />
                   to place and manage trades directly from your mobile phone and automate trades for execution at
                   predefined entries offers convenience and eliminates the need to sit in front of a computer.
                 </p>
@@ -166,7 +166,7 @@ const Main = () => {
                 hard to get through this phase and chose a learning path where you in essence not just are wasting time
                 and money.
               </p>
-              <h3 className="learning__subtitle subtitle">Solution</h3>
+              <h3 className="learning__subtitle subtitle">The solution</h3>
               <p className="learning__text text">
                 With 25 years of trading experience across various market conditions, I offer a personalized program
                 that teach you to navigate the noise, avoid common mistakes, and develop the knowledge and skills to
@@ -473,6 +473,9 @@ const Main = () => {
               The objective of the introductory call is to have a quick meet-and-greet, assess compatibility, and talk
               about backgrounds, motivations, and what to expect moving forward.
             </p>
+            <button className="talk__btn btn btn_transparent" onClick={() => navigate('/booking')}>
+              Book a call
+            </button>
           </div>
         </div>
       </section>

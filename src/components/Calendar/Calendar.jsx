@@ -128,7 +128,7 @@ const Calendar = ({ callTime, selectedDay, setSelectedDay, selectedTime, setSele
                   </div>
                 ))
               ) : (
-                <div className="calendar__time calendar__time_empty">no time</div>
+                <div className="calendar__time calendar__time_empty">-</div>
               )}
             </div>
           </div>

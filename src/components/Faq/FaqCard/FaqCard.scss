@@ -9,6 +9,18 @@
   transition: all 0.4s ease;
   margin-bottom: 10px;
 
+  @media screen and (max-width: 1440px) {
+    width: 407px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 744px) {
+    padding: 20px;
+  }
+
   &:hover,
   &.expanded {
     border: 1px solid #83c0cd;
@@ -27,6 +39,11 @@
     letter-spacing: 0.6px;
     width: calc(100% - 34px);
     margin-right: 10px;
+
+    @media screen and (max-width: 744px) {
+      font-size: 24px;
+      letter-spacing: 0.48px;
+    }
   }
 
   &__content {
@@ -41,6 +58,10 @@
 
   &__answer {
     margin-top: 40px;
+
+    @media screen and (max-width: 744px) {
+      margin-top: 20px;
+    }
   }
 
   &__arrow {
