@@ -42,6 +42,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'public/favicons', to: 'favicons' },
+        { from: 'public/favicon.ico', to: '' },
+        { from: 'public/apple-touch-icon.png', to: '' },
       ],
     }),
     new HtmlWebpackPlugin({
