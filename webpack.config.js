@@ -41,11 +41,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'public/favicons/*.*',
-        to: '',
-        transform: (content, path) => {
-          return content;
-        }, },
+        { from: 'public/favicons', to: './' },
       ],
     }),
     new HtmlWebpackPlugin({
