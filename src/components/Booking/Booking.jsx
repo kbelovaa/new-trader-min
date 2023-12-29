@@ -36,18 +36,24 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
     setIsEmailValid(isEmailValid);
   };
 
+  const checkIsFormInvalid = () => {
+    if (!name ||
+      !surname ||
+      !email ||
+      !isEmailValid ||
+      !mobile ||
+      !isMobileValid ||
+      !selectedDay ||
+      !selectedTime ||
+      !selectedPlatform) {
+      return true;
+    }
+
+    return false;
+  };
+
   const handleFormSubmit = async () => {
-    if (
-      name &&
-      surname &&
-      email &&
-      isEmailValid &&
-      mobile &&
-      isMobileValid &&
-      selectedDay &&
-      selectedTime &&
-      selectedPlatform
-    ) {
+    if (!checkIsFormInvalid()) {
       try {
         setShowSpinner(true);
         const row = getRow(rawSchedule, selectedDay, selectedTime) + 2;
@@ -184,7 +190,7 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
           {showSpinner ? (
             <div className="spinner spinner_small"></div>
           ) : (
-            <button className="booking__btn btn btn_solid" onClick={handleFormSubmit}>
+            <button className={`booking__btn btn btn_solid ${checkIsFormInvalid() ? 'inactive' : ''}`} onClick={handleFormSubmit}>
               Book
             </button>
           )}

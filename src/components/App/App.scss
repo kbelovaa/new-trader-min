@@ -62,12 +62,38 @@
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 3px 6px 15px -1px rgba(0, 0, 0, 0.1);
   color: #284657;
+
+  &:hover {
+    border: 1px solid #41718C;
+    background: #D1E1EA;
+  }
+
+  &:active {
+    color: #487894;
+    border: 1px solid #487894;
+    background: #EAF2F8;
+  }
 }
 
 .btn_solid {
   border: none;
   background: #284657;
   color: #fff;
+
+  &:hover {
+    background: #4F6A78;
+  }
+
+  &:active {
+    background: #1D313C;
+    color: #A6C9DE;
+  }
+
+  &.inactive {
+    background: #1A2D38;
+    color: #3E5968;
+    cursor: default;
+  }
 }
 
 .hidden {

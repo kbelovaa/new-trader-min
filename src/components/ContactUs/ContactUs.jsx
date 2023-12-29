@@ -19,10 +19,18 @@ const ContactUs = () => {
     setIsEmailValid(isEmailValid);
   };
 
+  const checkIsFormInvalid = () => {
+    if (!name || !email || !isEmailValid || !text) {
+      return true;
+    }
+
+    return false;
+  };
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (name && email && isEmailValid && text) {
+    if (!checkIsFormInvalid()) {
       try {
         setShowSpinner(true);
         const result = await contactUs(name, email, text);
@@ -92,7 +100,7 @@ const ContactUs = () => {
             {showSpinner ? (
               <div className="spinner spinner_small"></div>
             ) : (
-              <button type="submit" className="contact-us__btn btn btn_solid">
+              <button type="submit" className={`contact-us__btn btn btn_solid ${checkIsFormInvalid() ? 'inactive' : ''}`}>
                 Submit
               </button>
             )}
