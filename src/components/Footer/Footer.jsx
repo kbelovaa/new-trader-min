@@ -4,7 +4,10 @@ import './Footer.scss';
 const Footer = () => (
   <div className="container">
     <footer className="footer">
-      <p className="footer__text">Copyright © 2024 New trader.<br className='footer__linebreak' /> All rights reserved</p>
+      <p className="footer__text">
+        Copyright © 2024 New trader.
+        <br className="footer__linebreak" /> All rights reserved
+      </p>
       <ul className="footer__links">
         <li>
           <span className="footer__link">Terms of Use</span>

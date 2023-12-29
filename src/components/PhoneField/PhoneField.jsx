@@ -23,8 +23,8 @@ const PhoneField = ({ ipCountry, mobile, setMobile, isMobileValid, setIsMobileVa
         onChange={handleMobileChange}
         country={ipCountry}
         enableSearch={true}
-        inputClass={`${!ipCountry ? 'default' : ''} ${!mobile || !isMobileValid ? 'invalid-field' : ''}`}
-        buttonClass={`${!ipCountry ? 'hidden' : ''} ${!mobile || !isMobileValid ? 'invalid-field' : ''}`}
+        inputClass={`${!ipCountry && !mobile ? 'default' : ''} ${!mobile || !isMobileValid ? 'invalid-field' : ''}`}
+        buttonClass={`${!ipCountry && !mobile ? 'hidden' : ''} ${!mobile || !isMobileValid ? 'invalid-field' : ''}`}
         autoFormat
       />
       <p className={isMobileValid ? 'hidden' : 'input__note'}>Please enter a valid mobile number.</p>

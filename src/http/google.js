@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-const server_url = process.env.REACT_APP_SERVER_URL;
+const serverUrl = process.env.REACT_APP_SERVER_URL;
 
 export const getSchedule = async () => {
-  const { data } = await axios.get(`${server_url}/google/schedule`);
+  const { data } = await axios.get(`${serverUrl}/google/schedule`);
 
   return data.schedule;
 };
 
 export const bookCall = async (row, name, surname, email, mobile, platform, weekday, date, time) => {
-  const { data } = await axios.post(`${server_url}/google/book`, {
+  const { data } = await axios.post(`${serverUrl}/google/book`, {
     row,
     name,
     surname,
@@ -25,7 +25,7 @@ export const bookCall = async (row, name, surname, email, mobile, platform, week
 };
 
 export const contactUs = async (name, email, text) => {
-  const { data } = await axios.post(`${server_url}/google/contact-us`, { name, email, text });
+  const { data } = await axios.post(`${serverUrl}/google/contact-us`, { name, email, text });
 
   return data.success;
 };

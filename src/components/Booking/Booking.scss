@@ -90,6 +90,10 @@
       margin-right: 5px;
     }
 
+    @media screen and (max-width: 376px) {
+      padding: 0 5.13vw;
+    }
+
     &-label {
       color: rgba(40, 70, 87, 0.5);
       font-size: 18px;
@@ -111,7 +115,12 @@
         letter-spacing: 0.28px;
       }
 
-      .booking__platform_selected &, .booking__platform:hover & {
+      @media screen and (max-width: 376px) {
+        font-size: 3.59vw;
+      }
+
+      .booking__platform_selected &,
+      .booking__platform:hover & {
         color: #284657;
       }
     }
@@ -151,6 +160,14 @@
     line-height: 70%;
     margin-bottom: 20px;
     min-height: 13px;
+
+    &:first-of-type {
+      @media screen and (max-width: 376px) {
+        line-height: 150%;
+        margin-top: -7px;
+        margin-bottom: 15px;
+      }
+    }
   }
 
   &__btn {

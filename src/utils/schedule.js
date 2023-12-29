@@ -52,15 +52,15 @@ export const convertTime = (time, day, sourceTimeZone, timeZone) => {
 };
 
 export const getAvailableTime = (schedule) => {
-  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const currentDateTime = new Date(new Date().toLocaleString('en-US', { timeZone: timeZone }));
+  const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
+  const currentDateTime = new Date(new Date().toLocaleString('en-US', { timeZone }));
   currentDateTime.setHours(0, 0, 0, 0);
   const futureDays = schedule.filter((day) => parse(day.date, 'dd.MM.yyyy', new Date()) >= currentDateTime);
 
   const availableTime = futureDays.map((day) => {
     const targetDate = parse(day.date, 'dd.MM.yyyy', new Date());
     if (targetDate.getTime() === currentDateTime.getTime()) {
-      const options = { timeZone: timeZone, hour12: false, hour: 'numeric' };
+      const options = { timeZone, hour12: false, hour: 'numeric' };
       let currentHour = Number(new Date().toLocaleString('en-US', options));
       if (currentHour === 24) {
         currentHour = 0;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { getSchedule } from '../../http/google';
 import { convertTime, getAvailableTime, convertArray } from '../../utils/schedule';
-import { getIp } from '../../http/ipCountry';
+import getIp from '../../http/ipCountry';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import Header from '../Header/Header';
 import Main from '../Main/Main';

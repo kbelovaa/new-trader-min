@@ -37,7 +37,9 @@ const Main = () => {
           <div className="slide">
             <h1 className="slide__title">New to trading?</h1>
             <p className="slide__text text">
-              Learn how to trade stocks with confidence through a structured process designed to deliver results.<br className='slide__linebreak'/> The 4-week high-impact program is offered at $10,000 with limited availability.
+              Learn how to trade stocks with confidence through a structured process designed to deliver results.
+              <br className="slide__linebreak" /> The 4-week high-impact program is offered at $10,000 with limited
+              availability.
             </p>
             <button className="slide__btn btn btn_transparent" onClick={() => navigate('/booking')}>
               Book a call
@@ -74,8 +76,8 @@ const Main = () => {
               <div className="opportunities__item">
                 <h3 className="opportunities__subtitle subtitle">Lifestyle</h3>
                 <p className="opportunities__text text">
-                  Trading provides the flexibility to tailor a lifestyle according to your preferences. The ability
-                  to place and manage trades directly from your mobile phone and automate trades for execution at
+                  Trading provides the flexibility to tailor a lifestyle according to your preferences. The ability to
+                  place and manage trades directly from your mobile phone and automate trades for execution at
                   predefined entries offers convenience and eliminates the need to sit in front of a computer.
                 </p>
               </div>
