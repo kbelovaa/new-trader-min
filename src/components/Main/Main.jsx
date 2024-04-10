@@ -30,7 +30,7 @@ const Main = () => {
   return (
     <div className="main">
       <button className="main__btn btn btn_transparent" onClick={() => navigate('/booking')}>
-        Book a call
+        Try for free
       </button>
       <section className="slide-section">
         <div className="container">
@@ -42,7 +42,7 @@ const Main = () => {
               availability.
             </p>
             <button className="slide__btn btn btn_transparent" onClick={() => navigate('/booking')}>
-              Book a call
+              Try for free
             </button>
             <img src={devicesImg} alt="Devices" className="slide__image" />
           </div>
@@ -476,7 +476,7 @@ const Main = () => {
               about backgrounds, motivations, and what to expect moving forward.
             </p>
             <button className="talk__btn btn btn_transparent" onClick={() => navigate('/booking')}>
-              Book a call
+              Try for free
             </button>
           </div>
         </div>
