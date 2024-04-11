@@ -26,7 +26,7 @@ const Main = () => {
       setShowStrategyMore(false);
     }
   }, [showJourneyMore]);
-
+ 
   return (
     <div className="main">
       <button className="main__btn btn btn_transparent" onClick={() => navigate('/booking')}>
