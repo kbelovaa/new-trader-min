@@ -69,6 +69,7 @@ const Booking = ({ rawSchedule, callTime, ipCountry, timeZone }) => {
         );
         if (result) {
           setIsModalOpen(true);
+          fbq('track', 'BookCall');
         }
       } finally {
         setShowSpinner(false);
