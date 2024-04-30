@@ -26,7 +26,7 @@ const Main = () => {
       setShowStrategyMore(false);
     }
   }, [showJourneyMore]);
- 
+
   return (
     <div className="main">
       <button className="main__btn btn btn_transparent" onClick={() => navigate('/booking')}>
@@ -305,17 +305,6 @@ const Main = () => {
                     <h3 className="journey__subtitle subtitle">Discipline</h3>
                   </div>
                   <div className="journey__additional-info">
-                    <p className="journey__text text">
-                      One of the many traps new traders fall into is changing a solid strategy for the wrong reasons.
-                      Sometimes, when a new trader finds success with some consistent winning trades early on,
-                      everything is great. Then, he fails one or twice, leading him to then abandon the strategy in
-                      search of another with higher rate of success. This is a dangerous approach, as it can lead to a
-                      game of holy-grail chasing which often ends with failure. If we can have the discipline to accept
-                      that no one strategy will have 100% winning trades and stick to our rules over a sustained period
-                      of time to ascertain the strategies real potential, then and only then will we have a chance at
-                      success. After all, following a set of rules should not be that hard yet this is a challenge and
-                      potential pitfall for new traders.
-                    </p>
                     <p className="journey__text text">
                       One of the many traps new traders fall into is changing a solid strategy for the wrong reasons.
                       Sometimes, when a new trader finds success with some consistent winning trades early on,
