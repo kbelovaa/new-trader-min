@@ -1,5 +1,6 @@
 .calendar {
   color: #284657;
+  user-select: none;
 
   &__header {
     display: flex;
@@ -22,7 +23,6 @@
     line-height: 100%;
     min-width: 85px;
     text-align: center;
-    user-select: none;
   }
 
   &__days {
